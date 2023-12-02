@@ -220,22 +220,6 @@ class InnerTube {
         )
     }
 
-    suspend fun getTranscript(
-        client: YouTubeClient,
-        videoId: String,
-    ) = httpClient.post("https://music.youtube.com/youtubei/v1/get_transcript") {
-        parameter("key", "AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX3")
-        headers {
-            append("Content-Type", "application/json")
-        }
-        setBody(
-            GetTranscriptBody(
-                context = client.toContext(locale, null),
-                params = "\n${11.toChar()}$videoId".encodeBase64()
-            )
-        )
-    }
-
     suspend fun getSwJsData() = httpClient.get("https://music.youtube.com/sw.js_data")
 
     suspend fun accountMenu(client: YouTubeClient) = httpClient.post("account/account_menu") {
