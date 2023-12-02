@@ -151,24 +151,12 @@ class YouTubeTest {
     }
 
     @Test
-    fun lyrics() = runBlocking {
-        val nextResult = YouTube.next(WatchEndpoint(videoId = "NCC6lI0GGy0")).getOrThrow()
-        val lyrics = YouTube.lyrics(nextResult.lyricsEndpoint!!).getOrThrow()
-        assertTrue(lyrics != null)
-    }
-
-    @Test
     fun related() = runBlocking {
         val relatedEndpoint = YouTube.next(WatchEndpoint(videoId = "Z6ji6kls_OA")).getOrThrow().relatedEndpoint!!
         val relatedPage = YouTube.related(relatedEndpoint).getOrThrow()
         assertTrue(relatedPage.songs.isNotEmpty())
     }
 
-    @Test
-    fun transcript() = runBlocking {
-        val lyrics = YouTube.transcript("7G0ovtPqHnI").getOrThrow()
-        assertTrue(lyrics.isNotEmpty())
-    }
 
     companion object {
         private val VIDEO_IDS = listOf(
