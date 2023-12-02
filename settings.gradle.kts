@@ -13,5 +13,4 @@ dependencyResolutionManagement {
 rootProject.name = "InnerTune"
 include(":app")
 include(":innertube")
-include(":kugou")
 include(":material-color-utilities")
