@@ -386,11 +386,9 @@ public final class QuantizerWu implements Quantizer {
     }
 
     private static final class CreateBoxesResult {
-        int requestedCount;
         int resultCount;
 
         CreateBoxesResult(int requestedCount, int resultCount) {
-            this.requestedCount = requestedCount;
             this.resultCount = resultCount;
         }
     }

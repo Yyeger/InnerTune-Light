@@ -41,10 +41,6 @@ public final class TemperatureCache {
     private List<Hct> precomputedHctsByHue;
     private Map<Hct, Double> precomputedTempsByHct;
 
-    private TemperatureCache() {
-        throw new UnsupportedOperationException();
-    }
-
     /**
      * Create a cache that allows calculation of ex. complementary and analogous colors.
      *
